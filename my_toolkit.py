@@ -1,12 +1,11 @@
 import requests
-import time
 from dotenv import load_dotenv
 import os
 
 def key_check(key_path=None):
     try:
         reply=load_dotenv(key_path,verbose=True,override=True)   
-        print (reply)
+        assert reply , 'Dotenv is not found'
         nyt_api_key = os.getenv("NYT_API_KEY")
         tmdb_api_key = os.getenv("TMDB_API_KEY")
         assert nyt_api_key is not None, 'NYT_API_KEY not found in .env file'
@@ -22,10 +21,10 @@ def key_check(key_path=None):
     else:
         print('All keys loaded correctly')
         return (True)
-if __name__ == "__main__":
-    my_env= ['C:\src\\ai\data-sourcing-challenge\data-sourcing_challenge.env']
-    my_wrong_env = 'C:\src\\ai\.envt'
-    keys=input('please enter the key name : ')
-    print ([keys])
 
-    key_check([keys])
+if __name__ == "__main__":
+    my_env= ('C:\src\\ai\data-sourcing-challenge\.data-sourcing_challenge.env')
+    my_wrong_env = 'C:\src\\ai\.envt'
+    keys=input('please enter the dotenv path (press enter for default): ')
+
+    key_check(keys)
