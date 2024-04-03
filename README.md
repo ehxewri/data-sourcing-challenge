@@ -1,3 +1,9 @@
+The Code can be found in https://github.com/ehxewri/data-sourcing-challenge/blob/main/retrieve_movie_data.ipynb 
+
+I have done some refactoring based on what I believe the objectives are
+
+
+
 # Module 6 Challenge 
 ## Background
 You've been tasked to prepare some data for a recommendation system to help people find movie reviews and related movies. You will extract data from two different sources: The New York Times API and The Movie Database, then merge the data together. The text extracted from these APIs can later be used with natural language processing methods.
